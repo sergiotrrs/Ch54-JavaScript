@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web07 - ejercico 02</title>
+    <script>
+        function mostrarAlerta() {
+            alert("¡Hola, mundo!");
+        }
+
+        function cambiarColorFondo() {
+            document.body.style.backgroundColor = "lightblue";
+        }
+
+        function cambiarTexto() {
+            document.body.innerHTML = "<h1>¡Texto cambiado!</h1>";
+        }
+    </script>
+</head>
+<body>
+    <h1>Ejercicio 02 </h1>
+    <button onclick="mostrarAlerta()">Mostrar Alerta</button>
+    <!-- Agregar un botón que llame a la función CambiarColorFondo()-->
+    <button onclick="cambiarColorFondo()">Cambiar color</button>
+    <!-- Agregar un botón que llame a la función CambiarTexto()-->
+    <button onclick="cambiarTexto()">Cambiar texto</button>
+
+    <!-- Agregar un nuevo tag Script y agregar una función que cambie el background de body
+         a otro color ej. blue.
+         Agregar un botón que llame a esa función para cambiar el color de fondo 
+    -->
+    <script>
+        function cambiarColorFondoBody() {
+            document.body.style.backgroundColor = "#845EC2";
+            }
+    </script>
+    <button onclick="cambiarColorFondoBody()"> Cambia el color de tu body </button>
+</body>
+</html>

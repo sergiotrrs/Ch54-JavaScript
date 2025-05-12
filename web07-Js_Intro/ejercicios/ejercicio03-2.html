@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1 id="title">Web 07, ejercicio 03.2</h1>
+    <p>Reusando el mismo script que en ejercicio 03</p>
+    <button onclick="bodyColor('tomato')">Change color</button>
+    <button onclick="bodyColor('cyan')">Change color</button>
+    <button onclick="bodyColor('yellow')">Change color</button>
+    <br>
+    <p id="green-paragraph" onclick="changeToGreenColor()">Cambiar a color verde</p>
+    <p 
+        id="red-paragraph" 
+        onclick="changeColor( document.getElementById('red-paragraph') , 'red')"
+        >
+        Cambiar a color rojo
+    </p>
+    <p onclick="changeColor( this , 'yellow')">Cambiar a color amarillo</p>
+    <p onclick="changeColor( this , 'blue')">Cambiar a color azul</p>
+    <script src="./myScript.js" >
+        console.log("Este mensaje nunca se mostrará");
+    </script>
+</body>
+</html>
