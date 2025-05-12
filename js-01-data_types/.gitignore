@@ -1,0 +1,13 @@
+# Los comentarios comienzan con el signo de número (#)
+# Las carpeta y archivos que se desean ignorar con git se escriben en una línea nueva
+
+# No permitir la carpeta node_modules, subcarpeta de node_modules y archivos
+node_modules
+
+# No permitir archivos del sistema operativo Mac
+.DS_Store
+
+# No permitir los siguientes formatos de video
+.avi 
+.mkv
+.mp4
