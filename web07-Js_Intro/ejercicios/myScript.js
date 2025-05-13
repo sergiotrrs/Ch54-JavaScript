@@ -26,7 +26,6 @@ document.getElementById("titulo").innerText = "Hola mi nombre es: " + nom;
 
 function cambiarNombre() {
   let nom2 = prompt("¿Cuál es tu nombre?");
-   // Verifica que el usuario haya ingresado algo
     document.getElementById("titulo").innerText = "Hola mi nombre es: " + nom2;
  
 }
