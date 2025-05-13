@@ -22,7 +22,7 @@ console.log("Sesión JS-01, tipos de datos y variables");
 
 // ================= Datos primitivos ==================
 /*
- string: tipo de dato que rpresenta una secuencia de caracteres.
+ string: tipo de dato que representa una secuencia de caracteres.
   Puede incluir textos, números, espacios, símbolos. Siempre se 
   define entre comillas.
 
@@ -47,6 +47,19 @@ let valor2 = 4;
 console.log("El resultado de " + valor1 + " * " + valor2 + " = " + valor1 * valor2 + " pesos.");
 console.log(`El resultado de ${valor1} * ${valor2} = ${valor1*valor2} pesos.`);
 
+/* 
+ Crear una variable con el nombre de la persona que cumple años.
+ Crear una variable con el regalo que le darás.
+
+ Mostrar en consola el mensaje que incluya el nombre de las persona y el regalo.
+*/
+function felicitarCumpleanios( nombre, regalo){
+console.log(`Felicidades ${ nombre } por tu cumpleaños, te regalo ${ regalo }`);
+}
+let nombre = "Jenipher";
+let regalo = "un viaje a la montaña";
+felicitarCumpleanios(nombre, regalo);
+
 /*
  Tipos de datos number.
 
@@ -67,6 +80,15 @@ console.log( typeof +Infinity ); // 'number'
 console.log( typeof ( 3 + "Viernes temático" ) ); // 'string'
 console.log( typeof ( "3Viernes temático" ) ); // 'string'
 console.log( 4 / 0 ); // +Infinity
+
+/* Comprueba si las siguientes variables son del tipo number*/
+const num1 = 42;
+
+/* Comprueba si las siguientes variables son del tipo string*/
+const nameCh54 = "Luis";
+if (typeof nameCh54 == 'string') {
+  console.log('Es una cadena de texto');
+} else console.log('No es una cadena de texto');
 
 
 /*
@@ -157,15 +179,16 @@ console.log( typeof myName ); // 'undefined'
    Conversion explícita de datos (coerción de tipo)
 
  */
-const edadMascota = 10;
+const edadMascota = 10; // number
 // conversión explícita a String ============================================
 const edadMascotaString = String( edadMascota );
+const edadMascotaString2 = "" + edadMascota ;
 console.log(`Mi mascota tiene ${ edadMascotaString } años`);
 console.log(`Mi mascota tiene ${ edadMascota } años`);
 console.log( String( true ) ); // "true"
-console.log( String( null ) ); // 
+console.log( String( null ) ); // "null"
 console.log( String( undefined ) ); // "undefined"
-console.log( String( [] ) ); // empty Array-> ""
+console.log( String( [] ) ); // empty string-> ""
 console.log( String( [2,3,4,5,null,3] ) ); // "2,3,4,5,,3"
 console.log( String( {} ) ); // [object Object]
 console.log( String( {name:"Serch", active:true} ) ); // [object Object]
