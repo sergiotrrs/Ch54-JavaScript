@@ -11,7 +11,7 @@ console.log("Sesión JS-01, tipos de datos y variables");
     * undefined
     * bigint
     * symbol
-    > son inmutables, no tienen atributos ni métodos
+    > son inmutables, no tienen atributos ni métodos, una vez creados no cambian
 
 - Objetos:
      tipo object
@@ -22,7 +22,7 @@ console.log("Sesión JS-01, tipos de datos y variables");
 
 // ================= Datos primitivos ==================
 /*
- string: tipo de dato que rpresenta una secuencia de caracteres.
+ string: tipo de dato que representa una secuencia de caracteres.
   Puede incluir textos, números, espacios, símbolos. Siempre se 
   define entre comillas.
 
@@ -47,6 +47,17 @@ let valor2 = 4;
 console.log("El resultado de " + valor1 + " * " + valor2 + " = " + valor1 * valor2 + " pesos.");
 console.log(`El resultado de ${valor1} * ${valor2} = ${valor1*valor2} pesos.`);
 
+/* Crear una variable de la persona que cumple años.
+  Crear una variable con el regalo que le daras.
+  Mostar en consola el mensaje de incluye el nombre de la perosnas y el regalo
+
+*/ 
+
+let nombre_cumpleañero = "Jenny";
+let regalo = "BMW";
+console.log(`Feliz cumpleaños ${nombre_cumpleañero} te voy a regalar un ${regalo}`)
+
+
 /*
  Tipos de datos number.
 
@@ -61,12 +72,39 @@ console.log( typeof (3*3)  ); // 'number'
 console.log( typeof "" ); // 'string' empty string
 console.log( typeof " " ); // 'string'
 console.log( 3*"pitufo trabajador" ); // NaN
-console.log( typeof ( 3 * "pitufo trabajador") ); // 'number'
+console.log( typeof ( 3 * "pitufo trabajador") ); // 'number'  /* el + puede actuar como conquetacion o como  sumantoria, si son numericos es sumantoria, si son string es concatenación*/
 console.log( typeof (NaN) ); // 'number'
 console.log( typeof +Infinity ); // 'number'
 console.log( typeof ( 3 + "Viernes temático" ) ); // 'string'
 console.log( typeof ( "3Viernes temático" ) ); // 'string'
 console.log( 4 / 0 ); // +Infinity
+
+
+/* Comprueba si las siguientes variables son del tipo number*/
+const num1 = 42;
+console.log( typeof num1 === 'number' );
+
+/* Comprueba si las siguientes variables son del tipo string*/
+const nameCh54 = "Luis";
+console.log( typeof nameCh54 === 'number' );
+
+
+function numeros(num){
+if (typeof num == 'number') {
+  console.log('Es un numero');
+}else 
+  console.log('No es numero');
+}
+function letras(numCh54){
+if (typeof numCh54 == 'string') {
+  console.log('Es una cadena de texto');
+}else 
+  console.log('No es una cadena de texto');
+}
+const num=12;
+const numCh54 = "Abizaic";
+numeros(num);
+letras(numCh54);
 
 
 /*
@@ -84,13 +122,22 @@ console.log( `MAX_SAFE_INTEGER + 3: ${Number.MAX_SAFE_INTEGER + 3 }`); // 900719
 console.log( `MAX_SAFE_INTEGER + 4: ${Number.MAX_SAFE_INTEGER + 4 }`); // 9007199254740995
 console.log( `MAX_SAFE_INTEGER + 5: ${Number.MAX_SAFE_INTEGER + 5 }`); // 9007199254740996
 
+/*En la memoria tiene  un limite de 64 casillas para ser representado un numero  */
+/*en el BigInt el limite es la memoria de la computadora que usas */
+
+
+
+
 /*
  Tipos de datos BigInt
  Sirve para representar valores numéricos enteros, de los que el
  tipo number no pueda representar o no es seguro.
 
  Las operaciones con un bigInt se debe hacer con otro bigInt
+ SIMPRE TIENE QUE LLEVAR UNA n AL FINAL PARA INDICAR QUE ES UN BigInt, SI NO PASA A SER UN NUMBER 
+ CUANDO SE PONE LA n AL FINAL YA DE CLARAS QUE ES BigInt. 
 
+ No se pueden hacer operaciones entre number y BigInt, debe de ser entre numbers y numbers, asi como BigInt entre BigInt.
 */
 const myBigInt = 9007199254740991n;
 console.log( typeof myBigInt ); // bigint
@@ -159,7 +206,7 @@ console.log( typeof myName ); // 'undefined'
  */
 const edadMascota = 10;
 // conversión explícita a String ============================================
-const edadMascotaString = String( edadMascota );
+const edadMascotaString = String( edadMascota ); /*convertir a un string de manera profesional*/ 
 console.log(`Mi mascota tiene ${ edadMascotaString } años`);
 console.log(`Mi mascota tiene ${ edadMascota } años`);
 console.log( String( true ) ); // "true"
