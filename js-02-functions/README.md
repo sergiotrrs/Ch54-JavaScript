@@ -1,17 +1,14 @@
-# Curso de JavaScript: JS-01 Tipos de datos y variables
+# Curso de JavaScript: JS-02
 
 ## Descripción
-Aprender cómo se almacenan los datos en la memoria y cómo manipular los diferentes tipos de datos.
+Aprender como declarar y usar funciones.
 
 ### Objetivos de aprendizaje
-- Explicar los tipos de datos.
-- Explicar los principales tipos de datos en JavaScript: string, boolean, number, array, object, undefined y null.
-- Explicar las variables.
-- Declarar variables con nombres significativos.
-- Explicar la conversión implícita y explícita(type casting),
-- Convertir una variable en un tipo number.
-- Convertir una variable en un tipo string.
-- Convertir una variable en un tipo boolean.
+-Explicar las funciones y su importancia.
+-Definir e invocar funciones.
+-Declarar una función que no devuelve ningún valor.
+-Declarar una función que devuelve un valor.
+-Usar los parámetros de la función.
 
 ## Estructura del proyecto
 
