@@ -45,9 +45,11 @@ o funciones se eleven al comienzo de su ámbito antes de que se ejecute el códi
 
 */
 
-
-
-
+saludar("Jen");
+//Declaracion de la funcion
+function saludar( nombre ){
+  console.log("Que te gustaria de regalo de cumpleaños" + nombre );
+}
 
 /*
  ------------ Funciones expresadas -----------------------
@@ -63,7 +65,28 @@ sintaxis:
     };
 */
 
+const darRegalo = function ( nombre, regalo){
+  console.log( `Felicidades ${nombre}, te traje ${regalo}`);
+};
 
+darRegalo("Jen", "Sopa Nissin con camaron")
+
+/*
+ Realizar una función declarada que sume dos números 
+ y retorne el resultado.
+ 
+ Realizar una función expresada que reste dos números 
+ y retorne el resultado.
+ 
+*/
+
+function suma(a, b) {
+  return a + b;
+}
+
+const resta = function(a, b) {
+  return a - b;
+};
 
 
 
