@@ -205,3 +205,49 @@ console.log( parseInt("D2042D", 16) ); // 13763629
  
  // usando la función imprimirMensaje, enviar un callback para que
  // imprima con alert
+ // imprimirMensaje( alert );
+
+ // =========================================================
+/*
+  Realizar una función que sume dos numeros y que imprima
+  el resultado.
+   - inicialmente se imprimirá en la consola
+   - es posible que se te pida imprimir en el dom
+   - es posible que se te pida imprimir en un alert
+*/
+const sumarDosNumeros = ( a, b) => a  + b;
+/*
+const sumarEImprimir = ( a, b , opcion = "consola") => {
+   const resultado = sumarDosNumeros(a, b);
+   const mensaje = `La suma de ${a} + ${b} es: ${resultado}`;
+
+    //imprimir en consola
+   if( opcion === "consola") console.log(mensaje);
+   else if (opcion === "parrafo") document.getElementById("resultado-sumatoria").innerText = mensaje;
+   else if (opcion === "h2")document.getElementById("resultadoH2-sumatoria").innerText = mensaje;
+   else alert(mensaje)
+}
+sumarEImprimir( 10, 14); // se imprimr en consola 
+sumarEImprimir( 50, 50, "parrafo"); // Se imprime en el párrafo
+*/
+
+const sumarEImprimir = ( a, b , imprimir = console.log) => {
+   const resultado = sumarDosNumeros(a, b);
+   const mensaje = `La suma de ${a} + ${b} es: ${resultado}`;
+   imprimir(mensaje)
+}
+
+sumarEImprimir( 10, 14); // se imprimr en consola 
+
+const imprimirEnDOMParagraph = (mensaje) =>{
+  const refParagraph = document.getElementById("resultado-sumatoria");
+  refParagraph.innerText = mensaje;
+}
+
+const imprimirEnDOMH2 = (mensaje) =>{
+  const refParagraph = document.getElementById("resultadoH2-sumatoria");
+  refParagraph.innerText = mensaje;
+}
+
+sumarEImprimir( 10, 14, imprimirEnDOMParagraph); // se imprime en paragraph
+sumarEImprimir( 10, 14, imprimirEnDOMH2); // se imprime en h2
