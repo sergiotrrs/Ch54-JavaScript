@@ -98,8 +98,11 @@ sintaxis:
 
 */
 
-
-
+(function ( data ) {
+  console.log("Configuración inicial de la aplicación");
+  console.log(`Valor de data ${data}`)
+})(18);
+//setUp();
 
 
 /*
@@ -107,7 +110,7 @@ sintaxis:
              (arrow functions)
 Funciones similares a las funciones expresadas pero:
  - No requiere la palabra reservada function
- - Si tiene una solo instrucción no requiere las llaves {}
+ - Si tiene una sola instrucción no requiere las llaves {}
  - Si la instrucción es el mismo retorno, no requiere la palabra return
 
 sintaxis:
@@ -119,10 +122,40 @@ sintaxis:
     }
 */
 
+// Realizar una función declarada que calcule al área de un triángulo
+// al función debe retornar el resultado.
+// Área = (base * altura) / 2
+console.log(`El área del triángulo es: ${area(5, 10)}`);
+
+function area(a, b) {
+  return (a * b) / 2;
+}
+
+// Realizar una función expresada que calcule el área de un triángulo
+const calculaArea2 = function (base, altura) {
+  return (base*altura)/2;
+}
+console.log(`Resultado usando función expresada: ${calculaArea2(12,20)}`);
+
+// Realizar una función flecha que calcule el área de un triángulo
+const calculaArea3 = ( base, altura) => base * altura / 2;
+
+console.log(`Resultado usando arrow function: ${calculaArea3(12,20)}`)
+
+// ¿Qué sucede si uso console.log como retorno?
+const imprimirArea = (base, altura) => console.log(calculaArea3(base, altura));
+
+console.log(imprimirArea(12, 20));
+
+function imprimirEnConsole( mensaje ) {
+  console.log(mensaje);
+}
+console.log(imprimirEnConsole("Hola mundo")); // undefined
 
 
-
-
+// Realizar una función flecha que calcule el área de un círculo
+// Área = pi * radio^2
+// Usar una función flecha para imprimir el resultado en un párrafo id="area-circulo"
 
 
 /*
