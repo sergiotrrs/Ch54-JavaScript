@@ -251,3 +251,5 @@ const imprimirEnDOMH2 = (mensaje) =>{
 
 sumarEImprimir( 10, 14, imprimirEnDOMParagraph); // se imprime en paragraph
 sumarEImprimir( 10, 14, imprimirEnDOMH2); // se imprime en h2
+// Imprimir en alert
+sumarEImprimir( 10, 14, alert);
