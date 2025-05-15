@@ -169,7 +169,7 @@ function areaDeTriagulo(base, altura) {
 
 //realizar una funcion expresada que calcule el área de un triangulo 
 const areaTriagulo = function (base, altura) {
-  console.log(base * altura / 2 );
+  console.log(base * altura / 2);
 
 };
 areaTriagulo(4, 10);
@@ -178,27 +178,103 @@ areaTriagulo(4, 10);
 const calculoAreaTriangulo = (base, altura) => base * altura / 2;
 console.log(`resultado usando arrow function: ${calculoAreaTriangulo(4, 10)}`);
 
-
-const sumarDosNumeros = ( a, b) => a  + b;
-const sumarEImprimir = ( a, b) => {
-   const resultado = sumarDosNumeros(a, b);
-   const mensaje = `La suma de ${a} + ${b} es: ${resultado}`;
-   // imprimir en consola
-   // console.log(mensaje);
-   document.getElementById("resultado-sumatoria").innerText = mensaje;
+/*
+const sumarDosNumeros = (a, b) => a + b;
+const sumarEImprimir = (a, b) => {
+  const resultado = sumarDosNumeros(a, b);
+  const mensaje = `La suma de ${a} + ${b} es: ${resultado}`;
+  // imprimir en consola
+  // console.log(mensaje);
+  document.getElementById("resultado-sumatoria").innerText = mensaje;
 }
-sumarEImprimir( 10, 14);
+sumarEImprimir(10, 14);
 
 
 
-const sumarEImprimir = ( a, b , opcion = "consola") => {
-   const resultado = sumarDosNumeros(a, b);
-   const mensaje = `La suma de ${a} + ${b} es: ${resultado}`;
-    //imprimir en consola
-   if( opcion === "consola") console.log(mensaje);
-   else if (opcion === "parrafo") document.getElementById("resultado-sumatoria").innerText = mensaje;
-   else if (opcion === "h2")document.getElementById("resultadoH2-sumatoria").innerText = mensaje;
-   else alert(mensaje)
+function sumarEImprimir(a, b, opcion = "consola") {
+  const resultado = sumarDosNumeros(a, b);
+  const mensaje = `La suma de ${a} + ${b} es: ${resultado}`;
+  //imprimir en consola
+  if (opcion === "consola") console.log(mensaje);
+  else if (opcion === "parrafo") document.getElementById("resultado-sumatoria").innerText = mensaje;
+  else if (opcion === "h2") document.getElementById("resultadoH2-sumatoria").innerText = mensaje;
+  else alert(mensaje);
 }
 
-sumarEImprimir( 50, 14);
+sumarEImprimir(50, 14);
+*/
+
+// -------------- Recursividad ---------------------
+/*
+  Una función recursiva es una función que se llama así misma durante su ejecución.
+
+  Se utilizan en algoritmos y soluciones que se basan en la división y conquista
+  como cálculos matemáticos, recorrido de estructura de datos y algoritmos de búsqueda
+  y ordenamiento.
+
+  Patrón:
+    function nombreFuncionRecursiva( parametro  ){
+        if( condicionParo){
+            return expresión;
+        }
+        else {
+            // llamada recursiva
+            nombreFuncionRecursiva( nuevoParametro );
+        }
+    }
+*/
+
+  function nombreFuncionRecursiva( parametro  ){
+        if( condicionParo){ //evita que no se haga una repetición infinita
+            return expresión;
+        }
+        else {
+            // llamada recursiva
+            nombreFuncionRecursiva( nuevoParametro ); //
+        }
+    }
+
+   // Calcular el factorial de un número
+// factorial de 5: 5 * 4 * 3 * 2 * 1;
+function factorialConCicloFor( numero ) {
+    let factorial = 1;
+    for (let i=0; i < numero; i++) {
+      factorial *= (numero - i); // factorial = factorial * (numero - i);
+      console.log(`i: ${i}, factorial: ${factorial}, numero: ${numero - i}` );
+    }
+    return factorial;
+}
+console.log(`El factorial de 5 es: ${factorialConCicloFor(5)}`); // 120
+
+
+// funcion recursiva
+
+function factorialConRecursividad(numero){
+  console.log(`Resolviendo el factorial de ${numero}`);
+  if(numero <= 1 ) return 1 ;
+  const result = factorialConRecursividad(numero - 1 ) * numero; 
+  console.log(`El factorial de ${numero} es ${result}`);
+  return result;
+}
+
+console.log( `Resultado final de ${factorialConRecursividad(5)}`);
+
+/*
+======Asi es como se ve una factorial Con Recursividad======
+
+  parametro   recursividad(n-1)    returnFnc
+  5            5 - 1 = 4                120          
+  4            4 - 1 = 3                24  
+  3            3 - 1 = 2                6
+  2            2 - 1 = 1                2
+  1            ---------                1
+
+*/
+
+function saludarRecursivamente(saludo) {
+  if (saludo > 10) return;
+  console.log(`Saludo ${saludo}`);
+  saludarRecursivamente(saludo + 1); 
+}
+
+saludarRecursivamente(1); 
