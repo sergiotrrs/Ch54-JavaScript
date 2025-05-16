@@ -48,6 +48,41 @@ console.log("El resultado de " + valor1 + " * " + valor2 + " = " + valor1 * valo
 console.log(`El resultado de ${valor1} * ${valor2} = ${valor1*valor2} pesos.`);
 
 /*
+CREAR UNA VARIABLE CON EL NOMBRE DE LA PERSONA QUE CUMPLE AÑOS
+CREAR UNA VARIABLE CON EL REGALO QUE LE DARAS
+
+MOSTRAR EN CONSOLA EL MENSAJE QUE INCLYA EL NOMBRE DE LA PERSONA Y EL REGALO
+
+*/
+
+let nom="jen"
+let regalo="Tennis"
+cumpleaños(nom,regalo);
+
+function cumpleaños(nom,regalo){
+console.log(`Hoy 13 de Mayo del 2025 es el regalo ${nom} y le regale unos ${regalo}`);
+}
+
+function numeros(num){
+if (typeof num == 'number') {
+  console.log('Es un numero');
+}else 
+  console.log('No es numero');
+}
+
+function letras(numCh54){
+if (typeof numCh54 == 'string') {
+  console.log('Es una cadena de texto');
+}else 
+  console.log('No es una cadena de texto');
+}
+
+const num=12;
+const numCh54 = "Abizaic";
+
+numeros(num);
+letras(numCh54);
+/*
  Tipos de datos number.
 
  - números positivos: 100, 1, 0.258
