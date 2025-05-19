@@ -101,7 +101,7 @@ if (typeof numCh54 == 'string') {
 }else 
   console.log('No es una cadena de texto');
 }
-const num=12;
+const num=6;
 const numCh54 = "Abizaic";
 numeros(num);
 letras(numCh54);
