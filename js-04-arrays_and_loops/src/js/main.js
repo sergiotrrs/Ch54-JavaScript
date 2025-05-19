@@ -264,12 +264,15 @@ const imprimirMelateChocolate = ( numeros ) => {
 
 const generarNumerosDeLaSuerte = (size = 6, minNum = 1, maxNum = 54) => {
     const numeros = [];
+    let iteracion = 0;
 
     while( numeros.length < size ){
         const numAleatorio = generarNumeroAleatorio(minNum, maxNum);
         if( elNumeroExisteEnArreglo(numeros, numAleatorio) === false ){
             numeros.push(numAleatorio);
         }
+        console.log(iteracion, numeros, numAleatorio);
+        iteracion++;
     }
     imprimirMelateChocolate( numeros);
     
