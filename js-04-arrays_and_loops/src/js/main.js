@@ -274,3 +274,43 @@ const generarNumerosDeLaSuerte = (size = 6, minNum = 1, maxNum = 54) => {
     imprimirMelateChocolate( numeros);
     
 }
+
+// ------------- Uso del método sort() ----------------
+const numerosIniciales = [ 5, 33, 8, 100, 4, 2, 7, 6 ];
+                       //[ 5, 33, 8, 100, 4, 2, 7, 6 ] iteración 0
+                       //[ 5, 8, 33, 100, 4, 2, 7, 6 ] iteración 1
+                       //[ 5, 8, 33, 100, 4, 2, 7, 6 ] iteración 2
+                       //[ 5, 8, 33, 4, 100, 2, 7, 6 ] iteración 3
+                       //[ 5, 8, 33, 4, 2, 100, 7, 6 ] iteración 4
+                       //[ 5, 8, 33, 4, 2, 7, 100, 6 ] iteración 5
+                       //[ 5, 8, 33, 4, 2, 7, 6, 100 ] iteración 6
+                       
+const comparaNumeros = ( a, b ) => {
+    if ( a < b ) return -1;
+    if ( a > b ) return 1;
+    return 0;
+}
+
+const comparaNumeros2 = (a, b )=> a - b;
+
+const comparaNumerosOrdenDescendente = ( a, b ) => {
+    if ( a < b ) return 1;
+    if ( a > b ) return -1;
+    return 0;
+}
+
+const comparaNumerosOrdenDescendente2 = ( a, b ) => b - a;
+
+const ordenarNumeros = ( numerosDesordenados, tipoOrden)=>{
+    const numerosOrdenados = numerosDesordenados.slice();
+    numerosOrdenados.sort( tipoOrden );
+    return numerosOrdenados;
+}
+
+console.log( numerosIniciales ); // [ 5, 33, 8, 100, 4, 2, 7, 6 ]
+console.log( ordenarNumeros(numerosIniciales, comparaNumeros) ); // [2, 4, 5, 6, 7, 8, 33, 100]
+console.log( numerosIniciales ); // [ 5, 33, 8, 100, 4, 2, 7, 6 ]
+console.log( ordenarNumeros([28,37,99,52,5], comparaNumeros) ); // [5, 28, 37, 52, 99]
+console.log( ordenarNumeros([28,37,99,52,5], comparaNumerosOrdenDescendente) ); // [99, 52, 37, 28, 5]
+console.log( ordenarNumeros([28,37,99,52,5], comparaNumerosOrdenDescendente2) ); // [99, 52, 37, 28, 5]
+console.log( ordenarNumeros([28,37,99,52,5], (a,b)=>b-a ) ); // 
