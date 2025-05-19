@@ -251,10 +251,7 @@ const generarNumeroAleatorio = (minNum, maxNum) => {
 };
 
 const elNumeroExisteEnArreglo = (arreglo, numero) => {
-    for (const elemento of arreglo){
-        if( elemento === numero) return true
-    }
-    return false;
+    return arreglo.includes(numero);
 }
 
 const imprimirMelateChocolate = ( numeros ) => {
