@@ -41,6 +41,21 @@ const changeElementById = () =>{
 
 changeElementById();
 
+const cambiaElemntos = ( name ) => {
+    const descripcionOperadores = document.getElementById("tarjeta");
+    console.log(descripcionOperadores);
+    descripcionOperadores.innerHTML = 
+        `<div class="card" style="width: 18rem;">
+        <img src = "./public/images/dino.jpg" class="card-img-top" alt="Dinosaurio rex escribiendo código" >
+            <div class="card-body">
+                <h5 class="card-title">${name}</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+</div > `;
+}
+cambiaElemntos("Jenipher Mares");
+
 /**
  * Modificar elementos por su tag(etiqueta HTML)
  */
@@ -53,6 +68,7 @@ const changeElementsByTagName =  () => {
    }
 
 }
+
 
 // changeElementsByTagName();
 
@@ -86,7 +102,20 @@ const getListItemsByQuerySelector = () =>{
 }
 
 getListItemsByQuerySelector();
+/*
+let buttons = document.querySelectorAll('button');
+let numOfButtons = buttons.length;
+console.log(numOfButtons);
+*/
+const findElementsByTagName =  () => {
+   const numOfButtons = document.getElementsByTagName("button");
+   console.log( numOfButtons );
 
+   for( let button of numOfButtons){
+     buttons.innerText = "buttons"
+   }
+
+}
 
 // ----------------------- Ejercicio ----------------------------------
 // Seleccionar la imagen de dinosaurio que se muestra.
