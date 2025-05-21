@@ -3,10 +3,10 @@
 
 Método / Propiedad	                Descripción	                                    Ejemplo
 document.getElementById()	        Selecciona un elemento por su ID.	                                document.getElementById("titulo")
-document.querySelector()	        Devuelve el primer elemento que coincide con un selector CSS.	    document.querySelector(".btn")
-document.querySelectorAll()	        Devuelve todos los elementos que coinciden con un selector CSS.	    document.querySelectorAll("p")
-element.innerHTML	                Obtiene o establece el contenido HTML interno.	                    div.innerHTML = "<b>Hola</b>"
-element.textContent	                Obtiene o establece el texto interno.	                            div.textContent = "Texto plano"
+document.querySelector()	        Devuelve el primer elemento que coincide con un selector CSS.	    document.querySelector(".btn")      // se puede usar en todos los selecctores de SCC
+document.querySelectorAll()	        Devuelve todos los elementos que coinciden con un selector CSS.	    document.querySelectorAll("p")      // conjunto de selectores
+element.innerHTML	                Obtiene o establece el contenido HTML interno.	                    div.innerHTML = "<b>Hola</b>"        
+element.textContent	                Obtiene o establece el texto interno.	                            div.textContent = "Texto plano"         //no considera las etiquetas 
 element.setAttribute()	            Establece un atributo en el elemento.	                            img.setAttribute("src", "foto.jpg")
 element.getAttribute()	            Obtiene el valor de un atributo.	                                img.getAttribute("src")
 element.classList.add()	            Añade una clase CSS al elemento.	                                div.classList.add("activo")
@@ -40,7 +40,28 @@ const changeElementById = () =>{
 }
 
 changeElementById();
+/*
+ Modificar el parragraph de la línea 44 a 49 del html
+ Mostrar una tarjeta de bootstrao con el titulo "<Mi nombre>"
+ - Crear una nueva función que inserte la tarjeta.
+ - Invotar la función para que se ejecute.
+*/
 
+
+const cambiaElemntos = ( name ) => {
+    const descripcionOperadores = document.getElementById("tarjeta");
+    console.log(descripcionOperadores);
+    descripcionOperadores.innerHTML = 
+        `<div class="card" style="width: 18rem;">
+        <img src = "./public/images/dino.jpg" class="card-img-top" alt="Dinosaurio rex escribiendo código" >
+            <div class="card-body">
+                <h5 class="card-title">${name}</h5>
+                <p class="card-text">Yessica de Generation México, cohorte CH54.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+</div > `;
+}
+cambiaElemntos("Yessica");
 /**
  * Modificar elementos por su tag(etiqueta HTML)
  */
@@ -53,8 +74,16 @@ const changeElementsByTagName =  () => {
    }
 
 }
+// Realizar una función que lea todos los botones de la pagina y muestre en consola el numero total de botones
+function contarBotones() {
+  const botones = document.querySelectorAll('button');
+  console.log('Total de botones en la página:', botones.length);
+}
+contarBotones();
+
 
 // changeElementsByTagName();
+
 
 /**
  * Acceder a un elemento usando el selector universar
