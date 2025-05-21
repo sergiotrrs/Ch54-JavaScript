@@ -158,3 +158,14 @@ refBtnSuccess.addEventListener ( "mouseover", () => {
     refBtnPrimary.style.display = "block";
     refBtnSecondary.style.visibility = "visible"; 
 } );
+
+//realize una funcion que lea todos los botones de la pagina
+//y muestre en consola el numero total de botones.
+
+function contarBotones() {
+  const botones = document.querySelectorAll('button');
+  console.log(`Número total de botones: ${botones.length}`);
+}
+
+// Ejecutar la función cuando el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', contarBotones);
