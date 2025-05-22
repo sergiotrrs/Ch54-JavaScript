@@ -65,8 +65,23 @@ const numDeVueltas = ( number ) =>{
 return miPromesa;
 }
 
+/* 
+ La función se llama ponerChilito()
+ La función NO tiene parámetro de entrada.
+ Realizar una promesa que retorne en el estado resolve: "Chilito del que pica".
 
+ La función no debe tener Reject.
 
+*/
+const ponerChilito = ( ) => {
+    const miPromesa = new Promise( ( fncCallBackResolve ) =>
+    {
+        fncCallBackResolve("chilito del que pica");
+    });
+    return miPromesa;
+}
+
+const ponerChilito2 = Promise.resolve("chilito del que pica");
 
 // miFuncionPromesa().then( callback ).catch( callback ).finally( callback );
 /*
@@ -79,15 +94,75 @@ irPorElElote("noche")
     .finally( ()=> console.log("Se ha terminado tu promesa")  );
 */
 // Ya tengo mi elote, pero falta abri la bolsa
+/*
 const tiempo = "tarde"; 
 irPorElElote( tiempo )
     .then( ( response )=> {
         console.log("Promesa", tiempo, response);
         numDeVueltas( response.vueltas )
-        .then( response => console.log( tiempo, response ))
+        .then( response => {
+            console.log( tiempo, response )
+            ponerChilito()
+            .then( resolve => console.log("Promesa chilito", resolve))
+        } )
         .catch( error => console.log( error ) );
     })
     .catch( ( error )=> console.log(`Promesa rechazada`, error) )
     .finally( ()=> console.log("Se ha terminado tu promesa")  );
+*/
+/*
+const tiempo = "tarde"; 
+irPorElElote( tiempo )
+    .then( ( response )=> {
+        console.log("Promesa", tiempo, response);   
+        return numDeVueltas(response.vueltas);
+    })
+    .then( (response)=> {
+        console.log( "Promesa n.Vueltas", response );
+        return ponerChilito();
+    })
+    .then( (response) => {
+        console.log("Promesa chilito", response);
+    })
+    .catch( ( error )=> console.log(`Promesa rechazada`, error) )
+    .finally( ()=> console.log("Se ha terminado tu promesa")  );
+    
+*/
 
+// ============= uso de async y await ==========================
+ const crisQuiereElote = async () =>{
+try{
+    const tiempo = "noche"; 
+    const response = await irPorElElote( tiempo );
+    console.log(response);
+    const respuestaBolsa = await numDeVueltas(response.vueltas);
+    console.log(respuestaBolsa);
+    const mensajeFinal = await ponerChilito();
+    console.log(mensajeFinal);
+   } catch (error) {
+     console.log(`Promesa rechazada`,error);
+   }
 
+ }
+
+ console.log("Msj 1");
+ await crisQuiereElote();
+ console.log("Msj 2");
+
+ // ============== Uso de la api fetch ====================
+
+ const leerProductos = async ( url )=> {
+
+    try {
+        const response = await fetch(url); // Obtener los datos en formato JSON
+        console.log(response);
+        const datosApi =  await response.json(); // Convertir de JSON a objetos de JavaScript
+        console.log( datosApi );
+        return datosApi;
+        
+    } catch (error) {
+        console.log("No se pudo obtener los datos", error);
+    }
+
+ }
+ leerProductos("https://rickandmortyapi.com/api/character");
