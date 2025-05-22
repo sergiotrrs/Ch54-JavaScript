@@ -126,6 +126,18 @@ const insertarNombreEnElDOM = () => {
 
 insertarNombreEnElDOM();
 
+const manejoDelBotonGuardar = () => {
+  const refInput = document.querySelector("#nombreInput");
+  const newName = refInput.value;
+  newName && localStorage.setItem("nombre", newName);
+}
+
+/*
+  Cuando usas un script como módulo (<script type="module">), 
+  las funciones no se exponen automáticamente al ámbito global, 
+  por lo tanto no puedes llamarlas directamente desde el HTML 
+  con onclick="manejoDelBotonGuardar()"
+*/
 
 /*
   Programación síncrona.
