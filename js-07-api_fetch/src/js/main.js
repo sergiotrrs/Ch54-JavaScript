@@ -130,7 +130,25 @@ const manejoDelBotonGuardar = () => {
   const refInput = document.querySelector("#nombreInput");
   const newName = refInput.value;
   newName && localStorage.setItem("nombre", newName);
+
 }
+
+// NO lo debemos hacer
+// window.aLlamadaBotonGuardar = manejoDelBotonGuardar;
+
+/**
+ *  ¿Qué es addEventListener?
+ *  Es un método que permite escuchar eventos (como click, keydown, submit, etc.) en un elemento 
+ *  del DOM, y ejecutar una función cuando ese evento ocurre.
+ * 
+ * */
+const refSaveButton = document.getElementById("btnGuardar");
+refSaveButton.addEventListener( "click", manejoDelBotonGuardar  );
+
+const refNameInput = document.getElementById("nombreInput");
+refNameInput.addEventListener( "keydown" , ( event )=>{
+  console.log(event.key);
+});
 
 /*
   Cuando usas un script como módulo (<script type="module">), 
@@ -188,7 +206,16 @@ tercerPaso();
      setTimeout( ()=>{}  , tiempo_ms );
 
 */
+const saludar = (nombre, nombreCh54, cohorte)=> alert(`Hola ${nombre} de la ${cohorte}`);
 
+const saludarTranscurridoXSeg = ( milisegundos ) =>{
+   setTimeout( saludar, milisegundos, "Neo", "Cris", "Ch54" );
 
+}
+/*
+console.log("Antes de saludar");
+saludarTranscurridoXSeg( 5000 );
+console.log("Después de saludar");
+*/
 
 

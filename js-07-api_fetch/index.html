@@ -4,8 +4,8 @@
 <head>
 
   <script>
-    // console.log(aVariableTipoLet);
-    // console.log(aVariableTipoVar);
+    console.log(aVariableTipoLet); // ReferenceError
+    console.log(aVariableTipoVar); // undefined
     function aMiFuncion(){}
   </script>
 
@@ -40,7 +40,8 @@
         <img class="img-fluid rounded" src="./public/images/dino.jpg" alt="Dinosaurio rex escribiendo código" />
         <div class="mt-3">
           <input type="text" class="form-control mb-2" id="nombreInput" placeholder="Escribe nombre" >
-          <button onclick="handleSaveButton()" class="btn btn-warning" id="btnGuardar">Guardar</button>
+          <!-- <button onclick="aLlamadaBotonGuardar()" class="btn btn-warning" id="btnGuardar">Guardar</button> -->
+          <button class="btn btn-warning" id="btnGuardar">Guardar</button>
         </div>
       </figure>
       <!-- principal title -->
