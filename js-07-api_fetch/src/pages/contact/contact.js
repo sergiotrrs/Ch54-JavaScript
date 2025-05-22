@@ -22,6 +22,7 @@
  3.- Rejected: La promesa se rechaza con un razón
 
 */
+const vueltasAleatorias = (min=1, max=10)=> Math.floor(Math.random()*( max - min + 1)) + min;
 
 
 const irPorElElote= ( horaDelDia ) =>{
@@ -30,7 +31,7 @@ const irPorElElote= ( horaDelDia ) =>{
    const miPromesa = new Promise( ( fncCallBackResolve, fncCallBackReject )=>{
     console.log("Voy por el elote en la " + horaDelDia); // esta tarea pude demorar mucho o poco
        if( horaDelDia === "día" || horaDelDia === "tarde" ){
-          fncCallBackResolve("Toma tu elote que está dentro de una bolsa");
+          fncCallBackResolve( {mensaje:"Toma tu elote que está dentro de una bolsa", vueltas: vueltasAleatorias() });
        } else {
           fncCallBackReject( {error: 404, descripcion: "Elote no fue encontrado"}  );
        }
@@ -50,6 +51,7 @@ const irPorElElote= ( horaDelDia ) =>{
  *    con el texto "ups, se me cayó tu elote"
  *  
  */
+
 const numDeVueltas = ( number ) =>{
 
    const miPromesa = new Promise( ( fncCallBackResolve, fncCallBackReject )=>{
@@ -77,12 +79,11 @@ irPorElElote("noche")
     .finally( ()=> console.log("Se ha terminado tu promesa")  );
 */
 // Ya tengo mi elote, pero falta abri la bolsa
-const tiempo = "noche"; 
+const tiempo = "tarde"; 
 irPorElElote( tiempo )
     .then( ( response )=> {
         console.log("Promesa", tiempo, response);
-        const vueltas = 2;
-        numDeVueltas( vueltas)
+        numDeVueltas( response.vueltas )
         .then( response => console.log( tiempo, response ))
         .catch( error => console.log( error ) );
     })
