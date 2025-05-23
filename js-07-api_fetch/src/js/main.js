@@ -60,6 +60,8 @@ Características clave de los módulos JS:
     return a + b;
   }
 
+  export { PI, sumar }; // Exportación nombrada
+
   También puedes exportar por defecto (solo uno por módulo):
   export default function saludar(nombre) {
     return `¡Hola, ${nombre}!`;
@@ -78,8 +80,11 @@ Características clave de los módulos JS:
 
 
 // importa las funciones del footer y header e invócalos para que se ejecuten
+import { insertMainHeader } from "../modules/header/header.js";
+import footer from "../modules/footer/footer.js";
 
-
+insertMainHeader( document.getElementById("header") );
+footer( document.getElementById("footer") );
 
 /*
   Uso del local Storage.
@@ -100,8 +105,57 @@ Características clave de los módulos JS:
 
 */
 
+/*
+ Crear en el HTML un input y un botón para guardar el valor en el localStorage.
+  
+  Al cargar la página, si hay un valor guardado, mostrarlo en el titulo H1 "Hola, {nombre}".
+  En caso contrario, mostrar "Hola, persona invitada".
 
+*/
+const leerNombreDelLocalStorage = () => {
+  const nombre = localStorage.getItem("nombre") || "persona invitada";
+  return nombre;
+}
 
+const insertarNombreEnElDOM = () => {
+  const refH1 = document.querySelector("#bienvenida");
+  const nombre = leerNombreDelLocalStorage();
+  // refH1.innerHTML = `Hola, ${nombre}`;
+  refH1.textContent = `Hola, ${nombre}`;
+}
+
+insertarNombreEnElDOM();
+
+const manejoDelBotonGuardar = () => {
+  const refInput = document.querySelector("#nombreInput");
+  const newName = refInput.value;
+  newName && localStorage.setItem("nombre", newName);
+
+}
+
+// NO lo debemos hacer
+// window.aLlamadaBotonGuardar = manejoDelBotonGuardar;
+
+/**
+ *  ¿Qué es addEventListener?
+ *  Es un método que permite escuchar eventos (como click, keydown, submit, etc.) en un elemento 
+ *  del DOM, y ejecutar una función cuando ese evento ocurre.
+ * 
+ * */
+const refSaveButton = document.getElementById("btnGuardar");
+refSaveButton.addEventListener( "click", manejoDelBotonGuardar  );
+
+const refNameInput = document.getElementById("nombreInput");
+refNameInput.addEventListener( "keydown" , ( event )=>{
+  console.log(event.key);
+});
+
+/*
+  Cuando usas un script como módulo (<script type="module">), 
+  las funciones no se exponen automáticamente al ámbito global, 
+  por lo tanto no puedes llamarlas directamente desde el HTML 
+  con onclick="manejoDelBotonGuardar()"
+*/
 
 /*
   Programación síncrona.
@@ -152,7 +206,14 @@ tercerPaso();
      setTimeout( ()=>{}  , tiempo_ms );
 
 */
+const saludar = (nombre, nombreCh54, cohorte)=> alert(`Hola ${nombre} de la ${cohorte}`);
 
+const saludarTranscurridoXSeg = ( milisegundos ) =>{
+   setTimeout( saludar, milisegundos, "Neo", "Lilian Delgado", "Ch54" );
 
-
-
+}
+/*
+console.log("Antes de saludar");
+saludarTranscurridoXSeg( 5000 );
+console.log("Después de saludar");
+*/
