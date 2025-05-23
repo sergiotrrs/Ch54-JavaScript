@@ -79,8 +79,21 @@ Características clave de los módulos JS:
 
 // importa las funciones del footer y header e invócalos para que se ejecuten
 
+import { insertMainHeader } from "../modules/header/header.js";
+
+insertMainHeader(document.getElementById("header") );
+
+//footer 
+
+import { insertMainFooter } from "../modules/footer/footer.js";
+insertMainFooter( document.getElementById( "footer" ) );
 
 
+
+
+//con export default
+  //insertMainHeader( document.getElementById("header") );
+  //footer( document.getElementById("footer") );
 /*
   Uso del local Storage.
 
@@ -100,7 +113,55 @@ Características clave de los módulos JS:
 
 */
 
+/*
+ Crear en el HTML un input y un botón para guardar el valor en el localStorage.
+  
+  Al cargar la página, si hay un valor guardado, mostrarlo en el titulo H1 "Hola, {nombre}".
+  En caso contrario, mostrar "Hola, persona invitada".
+*/
 
+document.addEventListener('DOMContentLoaded', () => {
+  const greetingTitle = document.getElementById('greeting-title');
+  const nameInput = document.getElementById('name-input');
+  const saveButton = document.getElementById('save-name-btn');
+
+  // Verificar si hay un nombre en localStorage
+  const savedName = localStorage.getItem('nombre');
+  if (savedName) {
+    greetingTitle.textContent = `Hola, ${savedName}`;
+  } else {
+    greetingTitle.textContent = 'Hola, persona invitada';
+  }
+
+  // Guardar el nombre cuando se haga clic en el botón
+  saveButton.addEventListener('click', () => {
+    const name = nameInput.value.trim();
+    if (name) {
+      localStorage.setItem('nombre', name);
+      greetingTitle.textContent = `Hola, ${name}`;
+      nameInput.value = '';
+    }
+  });
+});
+
+// NO lo debemos hacer
+//window.aLlamadaBotonGuardar = manejoDelBotonGuardar; 
+
+
+/**
+ *  ¿Qué es addEventListener?
+ *  Es un método que permite escuchar eventos (como click, keydown, submit, etc.) en un elemento 
+ *  del DOM, y ejecutar una función cuando ese evento ocurre.
+ * 
+ * */
+
+//const refSaveButton = document.getElementById("btnGuardar");
+//refSaveButton.addEventListener( "click", manejoDelBotonGuardar  );
+
+/* const refNameInput = documento.getElementById("nombreInput");
+refNameInput.addEventListener( "keydown" , ( event )=>{
+  console.log(event.key);
+}); */
 
 
 /*
@@ -127,11 +188,11 @@ const tercerPaso = () => {
   console.log("03 - Fin de mi programa");
 };
 
-/*
-primerPaso();
+
+/* primerPaso();
 segundoPaso(); // Este proceso demora tiempo
-tercerPaso();
-*/
+tercerPaso(); */
+
 
 /*
  Programación asíncrona.
@@ -153,6 +214,15 @@ tercerPaso();
 
 */
 
+const saludarTranscurridosXSseg = ( milisegundos ) =>{
 
+  const saludar = ( nombre, apellido ) => alert(`Hola ${nombre} mi apellido es ${apellido}`);
 
+  setTimeout( saludar, milisegundos, "Morfeo", "Facundo" );
 
+}
+/* console.log("Antes de salir");
+saludarTranscurridosXSseg ( 5000 );
+console.log("Despues de saludar");
+
+ */
