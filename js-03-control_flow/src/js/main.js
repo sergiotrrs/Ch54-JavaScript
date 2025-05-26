@@ -42,7 +42,83 @@
 
 */
 
+/* 
+ Crear un arrow function que reciba el valor de edad.
+ Si la edad es mayor o igual a 18, la función debe
+ retornar el mensaje "Eres mayor de edad".
+ En caso contrario, retornar el mensaje "Eres menor de edad".
+ - Realizar la versión de if-else sin usar el bloque de código {}
+*/
+function mayorEDAD(edad) {
+    let mayor = "adulto";
+    let meno = "menor de edad";
 
+    if (edad >= 18) 
+        return mayor;
+     else
+        return meno;
+}
+
+console.log(mayorEDAD(12));
+console.log(mayorEDAD(18));
+
+/*
+ Crear un arrow function que reciba el valor de edad.
+ Si la edad es mayor o igual a 18 y menor o igual a 30
+( evalur con 18 Y(&&) evaluar con 30        )
+ la función debe retornar el mensaje "Tu luchador es Místico".
+ Si es mayor o igual a 31 el mensaje "Tu luchador es el perro Aguayo".
+ Si es menor a 18 el mensaje "Tu luchador es Penta"
+*/
+
+const luchadorFav = edad => {
+    if (edad >= 18 && edad <=30) {
+         
+        return "tu luchador es Mistico ";
+        }
+        else if (edad>=31){
+    return "Tu luchador es el perro aguayo";
+
+        } else if(edad<18){
+            return "Tu luchador es Penta";
+        }
+};
+const resultado = luchadorFav(15);
+console.log(resultado);
+
+{
+    let myVarLet = 30;
+    const myVarConst = 40;
+    var myVarVar = 50;
+    console.log(myVarLet, myVarConst, myVarVar)
+    {
+        let myVarLet = 30;
+        const myVarConst = 40;
+        var myVarVar = 120;
+        console.log(myVarLet, myVarConst, myVarVar)
+    }
+    console.log(myVarLet, myVarConst, myVarVar)
+}
+
+const opcion=1;
+let result;
+switch(opcion){
+    
+    case 1: 
+    let numero=1;
+for(let i=1;i<10;i++){
+    console.log("serie del 1 al 10= "+i);
+}
+    break;
+    case 2: 
+    result="buenas";
+    break;
+    case 3: 
+    result="tardes";
+    break;
+    default:
+        result="no hay mensaje"
+}
 
 
 //--------------- Condicional Switch --------------------------
@@ -74,8 +150,6 @@
 */
 
 
-
-
 /**
  * Función que reciba la velocidad de un ventilador y devuelva el mensaje
  * de la velocidad del ventilador en:
@@ -86,10 +160,52 @@
  * Cualquier otro valor: Velocidad desconocida
  * @param {number} velocidad
  * @returns {string} mensaje
+ * 
+ * Realizar dos versiones, una versión con switch y otra con if-else
  */
 
+const ventilador= velocidad=>{
+  
+    
+    let resultado;
+    switch(velocidad){
+case 1:
+    resultado="APAGADO";
+break;
 
+case 2:
+    resultado="BAJA";
+break;
+case 3:
+    resultado="MEDIA";
+break;
+case 4:
+    resultado="ALTA";
+break;
+default: 
+resultado="velocidad desconocida";
+    }
+return resultado;
+};
+console.log(ventilador(2));
 
+const ventiladorf= velocidad=>{
+    let resultado;
+if(velocidad===0){
+    resultado="Apagado"
+} else if(velocidad===1){
+    resultado="Baja";
+
+}else if(velocidad===2){
+    resultado="Media";
+
+}else if(velocidad===3){
+    resultado="Alta";
+
+}
+return resultado;
+};
+console.log(ventiladorf(1));
 
 // ------------------------ Operador ternario --------------------------
 /*
@@ -97,7 +213,7 @@
  Generalmente se utiliza como opción a la sentencia if-else.
 
  Sintaxis:
-  condición ? expresiónSiCondiciónEsVerdadera : expresionSiCondiciónEsFalsa; 
+  condición ? expresiónSiCondiciónEsVerdadera : expresionSiCondiciónEsFalsa;
 
 */
 
