@@ -150,12 +150,12 @@ try{
  console.log("Msj 2");
 
  // ============== Uso de la api fetch ====================
-
- const leerProductos = async ( url )=> {
+async function myFunction(){}
+const leerProductos = async ( url )=> {
 
     try {
         const response = await fetch(url); // Obtener los datos en formato JSON
-        console.log(response);
+        // console.log(response);
         const datosApi =  await response.json(); // Convertir de JSON a objetos de JavaScript
         console.log( datosApi );
         return datosApi;
@@ -165,4 +165,39 @@ try{
     }
 
  }
- leerProductos("https://rickandmortyapi.com/api/character");
+
+ const contruirTarjetasDeRickandMorty = ( personajes ) => {
+
+    const tarjetas = personajes.map( (personaje, index, array)=>(
+     `<div class="col-12 col-md-4 col-lg-3">
+        <div class="card mt-2">
+            <img src="${personaje.image}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">${personaje.name}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            <a href="#" class="btn btn-primary">${personaje.species}</a>
+            </div>
+        </div> 
+      </div>
+     `
+    ) );
+
+    return tarjetas;
+ }
+
+ const insertarTarjetasAlDom = (tarjetas, idDOM = "cards")=>{
+    const refDom =  document.getElementById( idDOM );
+    refDom.innerHTML = tarjetas.join("");
+ }
+
+
+ const crearCardsDeRickAndMorty = async ()=>{
+     // const data = await leerProductos("https://rickandmortyapi.com/api/character");
+     const data = await leerProductos("/public/json/rick.json");
+     const personajes = data.results;
+     console.log( personajes );
+     const tarjetas = contruirTarjetasDeRickandMorty( personajes);
+     insertarTarjetasAlDom( tarjetas );
+ }
+
+ crearCardsDeRickAndMorty();
