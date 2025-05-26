@@ -1,0 +1,158 @@
+[
+  {
+    "id": 1,
+    "title": "PlayStation 5 Console",
+    "price": 499.99,
+    "description": "The latest Sony PlayStation 5 gaming console with ultra-fast SSD and immersive 3D audio.",
+    "category": "consoles",
+    "image": "/public/gaming-products-images/PlayStation-5-Console.jpg",
+    "rating": {
+      "rate": 4.9,
+      "count": 3500
+    }
+  },
+  {
+    "id": 2,
+    "title": "Xbox Series X",
+    "price": 499.99,
+    "description": "Experience true 4K gaming with the Xbox Series X, featuring a powerful custom SSD.",
+    "category": "consoles",
+    "image": "/public/gaming-products-images/Xbox-Series-X.jpg",
+    "rating": {
+      "rate": 4.8,
+      "count": 2800
+    }
+  },
+  {
+    "id": 3,
+    "title": "Nintendo Switch OLED Model",
+    "price": 349.99,
+    "description": "Nintendo Switch with a vibrant 7-inch OLED screen for enhanced portable gaming.",
+    "category": "consoles",
+    "image": "/public/gaming-products-images/Nintendo-Switch-OLED-Model.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 1900
+    }
+  },
+  {
+    "id": 4,
+    "title": "DualSense Wireless Controller",
+    "price": 69.99,
+    "description": "The official PlayStation 5 controller with haptic feedback and adaptive triggers.",
+    "category": "accessories",
+    "image": "/public/gaming-products-images/DualSense-Wireless-Controller.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 2200
+    }
+  },
+  {
+    "id": 5,
+    "title": "Xbox Wireless Controller",
+    "price": 59.99,
+    "description": "Ergonomic Xbox Series X/S controller with textured grips and Bluetooth support.",
+    "category": "accessories",
+    "image": "/public/gaming-products-images/Xbox-Wireless-Controller.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 1800
+    }
+  },
+  {
+    "id": 6,
+    "title": "SteelSeries Arctis 7 Gaming Headset",
+    "price": 149.99,
+    "description": "Wireless gaming headset with surround sound and a clearcast microphone.",
+    "category": "accessories",
+    "image": "/public/gaming-products-images/SteelSeries-Arctis-7-Gaming-Headset.jpg",
+    "rating": {
+      "rate": 4.8,
+      "count": 1700
+    }
+  },
+  {
+    "id": 7,
+    "title": "Razer DeathAdder V2 Gaming Mouse",
+    "price": 49.99,
+    "description": "Ergonomic gaming mouse with optical switches and RGB lighting.",
+    "category": "accessories",
+    "image": "/public/gaming-products-images/Razer-DeathAdder-V2-Gaming-Mouse.jpg",
+    "rating": {
+      "rate": 4.9,
+      "count": 2500
+    }
+  },
+  {
+    "id": 8,
+    "title": "The Legend of Zelda: Breath of the Wild",
+    "price": 59.99,
+    "description": "Open-world adventure game for Nintendo Switch with stunning visuals.",
+    "category": "games",
+    "image": "/public/gaming-products-images/The-Legend-of-Zelda-Breath-of-the-Wild.jpg",
+    "rating": {
+      "rate": 4.9,
+      "count": 4000
+    }
+  },
+  {
+    "id": 9,
+    "title": "Elden Ring",
+    "price": 59.99,
+    "description": "Action RPG developed by FromSoftware and published by Bandai Namco.",
+    "category": "games",
+    "image": "/public/gaming-products-images/Elden-Ring.jpg",
+    "rating": {
+      "rate": 4.9,
+      "count": 3700
+    }
+  },
+  {
+    "id": 10,
+    "title": "Final Fantasy VII Remake",
+    "price": 59.99,
+    "description": "Reimagined RPG classic with stunning visuals and an engaging story.",
+    "category": "games",
+    "image": "/public/gaming-products-images/Final-Fantasy-VII-Remake.jpg",
+    "rating": {
+      "rate": 4.8,
+      "count": 2100
+    }
+  },
+  {
+    "id": 11,
+    "title": "Resident Evil 4 Remake",
+    "price": 59.99,
+    "description": "Survival horror classic reimagined with modern graphics and gameplay.",
+    "category": "games",
+    "image": "/public/gaming-products-images/Resident-Evil-4-Remake.jpg",
+    "rating": {
+      "rate": 4.9,
+      "count": 2800
+    }
+  },
+  {
+    "id": 12,
+    "title": "Corsair K95 RGB Platinum Keyboard",
+    "price": 199.99,
+    "description": "Mechanical gaming keyboard with customizable RGB lighting.",
+    "category": "accessories",
+    "image": "/public/gaming-products-images/Corsair-K95-RGB-Platinum-Keyboard.jpg",
+    "rating": {
+      "rate": 4.8,
+      "count": 1500
+    }
+  },
+  {
+    "id": 13,
+    "title": "Logitech G Pro X Headset",
+    "price": 129.99,
+    "description": "Professional gaming headset with Blue VO!CE technology.",
+    "category": "accessories",
+    "image": "/public/gaming-products-images/Logitech-G-Pro-X-Headset.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 1600
+    }
+  }
+]
