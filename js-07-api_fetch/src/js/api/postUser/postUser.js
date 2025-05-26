@@ -5,7 +5,8 @@ const postUser = async ( user, url ) => {
     const options = {
         method: "POST", // Método HTTP: POST, PUT, DELETE, GET
         headers: {
-            "Content-Type": "application/json" // Tipo de contenido
+            "Content-Type": "application/json", // Tipo de contenido
+            "x-api-key": "reqres-free-v1" // Clave de la API (opcional, depende del servidor)
         },
         body: JSON.stringify(user) // Cuerpo de la petición
     }
