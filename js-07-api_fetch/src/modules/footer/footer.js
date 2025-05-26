@@ -9,3 +9,5 @@ const insertMainFooter = ( footer )=>{
 
 }
 
+export { insertMainFooter };
+

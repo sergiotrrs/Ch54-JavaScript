@@ -79,7 +79,12 @@ Características clave de los módulos JS:
 
 // importa las funciones del footer y header e invócalos para que se ejecuten
 
+import { insertMainFooter } from "../modules/footer/footer.js";
+import { insertMainHeader } from "../modules/header/header.js";
 
+insertMainHeader(document.getElementById("header"));
+
+insertMainFooter(document.getElementById("footer"));
 
 /*
   Uso del local Storage.
@@ -99,6 +104,53 @@ Características clave de los módulos JS:
     localStorage.clear() → Borra todo el almacenamiento.
 
 */
+
+/*
+ Crear en el HTML un input y un botón para guardar el valor en el localStorage.
+  
+  Al cargar la página, si hay un valor guardado, mostrarlo en el titulo H1 "Hola, {nombre}".
+  En caso contrario, mostrar "Hola, persona invitada".
+*/
+
+
+const leerNombreDelLocalStorage = () => {
+  const nombre = localStorage.getItem("nombre") || "persona invitada";
+  return nombre;
+}
+const insertarNombreEnElDOM = () => {
+  const refH2 = document.querySelector("#bienvenida");
+  const nombre = leerNombreDelLocalStorage();
+  // refH1.innerHTML = `Hola, ${nombre}`;
+  refH2.textContent = `Hola, ${nombre}`;
+}
+
+insertarNombreEnElDOM();
+
+const manejoDelBotonGuardar = ( ) => {
+  const refInput = document.querySelector("#nombreInput");
+  const newName = refInput.value;
+  newName && localStorage.setItem("nombre", newName)
+
+}
+
+// NO lo debemos hacer
+//window.aLlamadaBotonGuardar = manejoDelBotonGuardar;
+
+/**
+ *  ¿Qué es addEventListener?
+ *  Es un método que permite escuchar eventos (como click, keydown, submit, etc.) en un elemento 
+ *  del DOM, y ejecutar una función cuando ese evento ocurre.
+ * */
+
+const refSaveButton = document.getElementById("btnGuardar");
+refSaveButton.addEventListener("click", manejoDelBotonGuardar)
+
+const refNameInput = document.getElementById("nombreInput");
+refSaveButton.addEventListener("keydown", (event)=>{
+  console.log(event.key);
+});
+
+//requiere dos argumentos el primero que es lo que quiero que evento y el segundo argumento es la funcion del callback
 
 
 
@@ -153,6 +205,13 @@ tercerPaso();
 
 */
 
+const saludarTranscurridoXSeg = ( milisegundos ) =>{
+  const saludar = ( nombre)=>alert(`Hola ${nombre}`);
+  setTimeout( saludar, milisegundos, "Neo")
 
+}
+console.log("Antes de saludar")
+saludarTranscurridoXSeg( 5000 );
+console.log("Después de saludar")
 
 
