@@ -5,7 +5,7 @@
     "price": 499.99,
     "description": "The latest Sony PlayStation 5 gaming console with ultra-fast SSD and immersive 3D audio.",
     "category": "consoles",
-    "image": "/public/gaming-products-images/PlayStation-5-Console.jpg",
+    "image": "/images/gaming-products-images/PlayStation-5-Console.jpg",
     "rating": {
       "rate": 4.9,
       "count": 3500
@@ -17,7 +17,7 @@
     "price": 499.99,
     "description": "Experience true 4K gaming with the Xbox Series X, featuring a powerful custom SSD.",
     "category": "consoles",
-    "image": "/public/gaming-products-images/Xbox-Series-X.jpg",
+    "image": "/images/gaming-products-images/Xbox-Series-X.jpg",
     "rating": {
       "rate": 4.8,
       "count": 2800
@@ -29,7 +29,7 @@
     "price": 349.99,
     "description": "Nintendo Switch with a vibrant 7-inch OLED screen for enhanced portable gaming.",
     "category": "consoles",
-    "image": "/public/gaming-products-images/Nintendo-Switch-OLED-Model.jpg",
+    "image": "/images/gaming-products-images/Nintendo-Switch-OLED-Model.jpg",
     "rating": {
       "rate": 4.7,
       "count": 1900
@@ -41,7 +41,7 @@
     "price": 69.99,
     "description": "The official PlayStation 5 controller with haptic feedback and adaptive triggers.",
     "category": "accessories",
-    "image": "/public/gaming-products-images/DualSense-Wireless-Controller.jpg",
+    "image": "/images/gaming-products-images/DualSense-Wireless-Controller.jpg",
     "rating": {
       "rate": 4.6,
       "count": 2200
@@ -53,7 +53,7 @@
     "price": 59.99,
     "description": "Ergonomic Xbox Series X/S controller with textured grips and Bluetooth support.",
     "category": "accessories",
-    "image": "/public/gaming-products-images/Xbox-Wireless-Controller.jpg",
+    "image": "/images/gaming-products-images/Xbox-Wireless-Controller.jpg",
     "rating": {
       "rate": 4.7,
       "count": 1800
@@ -65,7 +65,7 @@
     "price": 149.99,
     "description": "Wireless gaming headset with surround sound and a clearcast microphone.",
     "category": "accessories",
-    "image": "/public/gaming-products-images/SteelSeries-Arctis-7-Gaming-Headset.jpg",
+    "image": "/images/gaming-products-images/SteelSeries-Arctis-7-Gaming-Headset.jpg",
     "rating": {
       "rate": 4.8,
       "count": 1700
@@ -77,7 +77,7 @@
     "price": 49.99,
     "description": "Ergonomic gaming mouse with optical switches and RGB lighting.",
     "category": "accessories",
-    "image": "/public/gaming-products-images/Razer-DeathAdder-V2-Gaming-Mouse.jpg",
+    "image": "/images/gaming-products-images/Razer-DeathAdder-V2-Gaming-Mouse.jpg",
     "rating": {
       "rate": 4.9,
       "count": 2500
@@ -89,7 +89,7 @@
     "price": 59.99,
     "description": "Open-world adventure game for Nintendo Switch with stunning visuals.",
     "category": "games",
-    "image": "/public/gaming-products-images/The-Legend-of-Zelda-Breath-of-the-Wild.jpg",
+    "image": "/images/gaming-products-images/The-Legend-of-Zelda-Breath-of-the-Wild.jpg",
     "rating": {
       "rate": 4.9,
       "count": 4000
@@ -101,7 +101,7 @@
     "price": 59.99,
     "description": "Action RPG developed by FromSoftware and published by Bandai Namco.",
     "category": "games",
-    "image": "/public/gaming-products-images/Elden-Ring.jpg",
+    "image": "/images/gaming-products-images/Elden-Ring.jpg",
     "rating": {
       "rate": 4.9,
       "count": 3700
@@ -113,7 +113,7 @@
     "price": 59.99,
     "description": "Reimagined RPG classic with stunning visuals and an engaging story.",
     "category": "games",
-    "image": "/public/gaming-products-images/Final-Fantasy-VII-Remake.jpg",
+    "image": "/images/gaming-products-images/Final-Fantasy-VII-Remake.jpg",
     "rating": {
       "rate": 4.8,
       "count": 2100
@@ -125,7 +125,7 @@
     "price": 59.99,
     "description": "Survival horror classic reimagined with modern graphics and gameplay.",
     "category": "games",
-    "image": "/public/gaming-products-images/Resident-Evil-4-Remake.jpg",
+    "image": "/images/gaming-products-images/Resident-Evil-4-Remake.jpg",
     "rating": {
       "rate": 4.9,
       "count": 2800
@@ -137,7 +137,7 @@
     "price": 199.99,
     "description": "Mechanical gaming keyboard with customizable RGB lighting.",
     "category": "accessories",
-    "image": "/public/gaming-products-images/Corsair-K95-RGB-Platinum-Keyboard.jpg",
+    "image": "/images/gaming-products-images/Corsair-K95-RGB-Platinum-Keyboard.jpg",
     "rating": {
       "rate": 4.8,
       "count": 1500
@@ -149,7 +149,7 @@
     "price": 129.99,
     "description": "Professional gaming headset with Blue VO!CE technology.",
     "category": "accessories",
-    "image": "/public/gaming-products-images/Logitech-G-Pro-X-Headset.jpg",
+    "image": "/images/gaming-products-images/Logitech-G-Pro-X-Headset.jpg",
     "rating": {
       "rate": 4.7,
       "count": 1600

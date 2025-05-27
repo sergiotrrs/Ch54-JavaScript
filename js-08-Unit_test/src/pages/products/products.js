@@ -1,22 +1,21 @@
-import "/src/css/styles.scss";
+import "/src/assets/css/styles.scss";
 import "./products.css"
 import * as bootstrap from 'bootstrap';
 
+import { insertMainHeader } from "/src/components/common/header/header";
+import { insertMainFooter } from "/src/components/common/footer/footer";
+import { loadAndRenderProducts } from "../../components/productCard/loadAndRenderProducts";
 
-import { insertMainHeader } from "/src/modules/header/header";
-import { insertMainFooter } from "/src/modules/footer/footer";
-import { getProducts } from "../../modules/api/getProducts/getProducts.js";
 
-window.addEventListener( "load", async() => document.getElementById("app").innerHTML = `
-    ${insertMainHeader()} 
-    <main class="container text-center my-4">
-      <div class="row">
-        ${await getProducts("/json/gaming-products.json")}
-      </div>
-    </main>
-    ${insertMainFooter()}
-`
-);
+window.addEventListener( "load", async() =>{
+    
+    insertMainHeader( document.getElementById("header") );
+
+    await loadAndRenderProducts( document.getElementById("main") );
+    
+    insertMainFooter( document.getElementById("footer") );
+
+});
  
 /*
  * En la semana 12, al tener lista nuestra API en SpringBoot
