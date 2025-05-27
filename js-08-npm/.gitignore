@@ -1,0 +1,2 @@
+# No permitir que la carpeta node_modules sea parte de nuestro control de versiones
+node_modules
