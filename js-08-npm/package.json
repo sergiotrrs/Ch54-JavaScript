@@ -1,0 +1,24 @@
+{
+  "name": "sesion-js-08-npm",
+  "version": "0.0.1",
+  "description": "Uso de NPM en una aplicación web",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://mirepo.com"
+  },
+  "keywords": [
+    "generatiom",
+    "js08",
+    "javascript",
+    "ch54"
+  ],
+  "author": "jen",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.6"
+  }
+}
