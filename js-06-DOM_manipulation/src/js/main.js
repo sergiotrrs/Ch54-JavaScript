@@ -28,133 +28,169 @@ element.style.cursor	            Cambia el cursor al pasar sobre el elemento.	  
  *  Cambiar el contenido de un elemento HTML por medio de su ID
  */
 const changeElementById = () =>{
-  // document: representa cualquier página web carga en el navegador
-  //         sirve como punto de entrada al contenido de la página.
-  //         document es el objeto principal del DOM.
-    const descripcionOperadores = document.getElementById("descripcion-document");
-    console.log( descripcionOperadores );
-    // descripcionOperadores.innerText = "document: representa cualquier página web carga en el navegador.";
-    //descripcionOperadores.innerText = "<strong>document</strong>: representa cualquier página web carga en el navegador.";
-    //descripcionOperadores.innerHTML = "<strong>document</strong>: representa cualquier página web carga en el navegador.";
-    descripcionOperadores.innerHTML = '<span class="text-warning">document</span>: representa cualquier página web carga en el navegador.';
-}
-
-changeElementById();
-
-/**
- * Modificar elementos por su tag(etiqueta HTML)
- */
-const changeElementsByTagName =  () => {
-   const listItems = document.getElementsByTagName("li");
-   console.log( listItems );
-
-   for( let item of listItems){
-     item.innerText = "Mi nuevo li"
-   }
-
-}
-
-// changeElementsByTagName();
-
-/**
- * Acceder a un elemento usando el selector universar
- */
-const getElementsByQuerySelector = () =>{
-                  // document.getElementById("descripcion-operadores");
-    const element = document.querySelector("#descripcion-operadores");
-    console.log(element);
-
-    const elementParagraph = document.querySelector("p"); // Seleccionar el primer paragraph que se encuentre    
-    console.log( elementParagraph );
-
-    const classTextCenter = document.querySelector(".text-center"); // Seleccionar el primer elemento con la clase text-center
-    console.log( classTextCenter );
-
-    const anchorAndTextWarning = document.querySelector("a.text-warning"); // primer anchor que tenga la clases text-warning
-    console.log( anchorAndTextWarning)
-}
-
-getElementsByQuerySelector();
-
-/**
- * Acceder a varios elementos usando el selector universal
- * 
- */
-const getListItemsByQuerySelector = () =>{
-    const listItems = document.querySelectorAll(".text-start li");
-    console.log( listItems );
-}
-
-getListItemsByQuerySelector();
-
-
-// ----------------------- Ejercicio ----------------------------------
-// Seleccionar la imagen de dinosaurio que se muestra.
-// mostrar en consola el objeto
-const getImagenDinosaurio = ( ) => {
-
-}
-getImagenDinosaurio( );
-
-// Cambiar la imagen de dinosaurio a la imagen web-developer
-const changeImage = () => {
-
-
-}
-
-const imagenPrincipal = getImagenDinosaurio();
-imagenPrincipal.style.cursor = "pointer";
-
-/**
- *  ¿Qué es addEventListener?
- *  Es un método que permite escuchar eventos (como click, keydown, submit, etc.) en un elemento 
- *  del DOM, y ejecutar una función cuando ese evento ocurre.
- * 
- *  Usa addEventListener para código más limpio, modular y flexible. 
- *  Usa onclick solo en scripts simples o casos rápidos.
- * 
- *  Diferencias y ventajas vs onclick
- *  Característica	        addEventListener	                 onclick
- *  Múltiples handlers	    ✅ Permite varios listeners	        ❌ Solo uno, el último sobrescribe
- *  Separación lógica	    ✅ Mantiene mejor el orden del JS	❌ Mezcla estructura y lógica
- *  Soporte de eventos	    ✅ Soporta todos los eventos	        ❌ Solo click
- *  Compatibilidad	        ✅ Funciona en todos los navegadores	❌ No soportado en IE8 y anteriores
- *  Remoción de eventos	    ✅ Se puede eliminar fácilmente	    ❌ No se puede eliminar
- *  Compatibilidad con IE   ✅ Funciona en IE9+	                ❌ Solo en IE8 y anteriores
- *  
- * 
- */
-// imagenPrincipal.addEventListener( evento , callback );
-// imagenPrincipal.addEventListener( "click" , changeImage );
-imagenPrincipal.addEventListener( "click" , ()=>{
-    // Hacer otras cosas
-    changeImage();
-} );
-
-
-// ------------------ Propiedades de visualización ---------------
-//                       Desaparecer el elemento
-// display : none (quitar el elemento del DOM)
-// visibility: hidden (ocultar el elemento)
-
-// refBtnPrimary = document.quearySelector("#btn-primary")
-refBtnPrimary = document.getElementById("btn-primary");
-refBtnSecondary = document.getElementById("btn-secondary");
-refBtnSuccess = document.getElementById("btn-success");
-
-refBtnPrimary.addEventListener("click", ()=>{
-    refBtnPrimary.style.display = "none";
-} );
-
-// Aplicar visibility = "hidden" para el btn-secondary
-refBtnSecondary.addEventListener("click", () => {
-    refBtnSecondary.style.visibility = "hidden";
-});
-
-// Reestablecer la visualizacion de los botones primary y secondary
-// Usando el evento mouseover : Se activa cuando el puntero del ratón pasa sobre el botón
-// display: "block"      visibility: "visible"
-refBtnSuccess.addEventListener ( "mouseover", () => {
-    refBtnPrimary.style.display = "block";
-    refBtnSecondary.style.visibility = "visible"; 
-} );
+    // document: representa cualquier página web carga en el navegador
+    //         sirve como punto de entrada al contenido de la página.
+    //         document es el objeto principal del DOM.
+      const descripcionOperadores = document.getElementById("descripcion-document");
+      console.log( descripcionOperadores );
+      
+      //descripcionOperadores.innerText = "<strong>document</strong>: representa cualquier página web carga en el navegador.";
+      //descripcionOperadores.textContent = "<strong>document</strong>: representa cualquier página web carga en el navegador.";
+      descripcionOperadores.innerHTML = '<span class="text-warning">document</span>: representa cualquier página web carga en el navegador.';
+  }
+  
+  changeElementById();
+  
+  /*
+   Modificar el parragraph de la línea 44 a 49 del html
+   Mostrar una tarjeta de bootstrao con el titulo "<Mi nombre>"
+  
+   - Crear una nueva función que inserte la tarjeta.
+   - Invocar la función para que se ejecute.
+  */
+  const cambiaElemntos = ( name ) => {
+      const descripcionOperadores = document.getElementById("tarjeta");
+      console.log(descripcionOperadores);
+      descripcionOperadores.innerHTML = 
+          `<div class="card" style="width: 18rem;">
+          <img src = "./public/images/dino.jpg" class="card-img-top" alt="Dinosaurio rex escribiendo código" >
+              <div class="card-body">
+                  <h5 class="card-title">${name}</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+          </div > `;
+  }
+  cambiaElemntos("jesus de Veracruzz");
+  
+  
+  /**
+   * Modificar elementos por su tag(etiqueta HTML)
+   */
+  const changeElementsByTagName =  () => {
+     const listItems = document.getElementsByTagName("li");
+     console.log( listItems );
+  
+     for( let item of listItems){
+       item.innerText = "Mi nuevo li"
+     }
+  
+  }
+  // changeElementsByTagName();
+  
+  /*
+   - Realizar una función que lea todos lo botónes de la página
+   y muestre el consola el número total de botones.
+  
+  */
+  function contarBotones() {
+    //const botones = document.querySelectorAll('button');
+    const botones = document.getElementsByTagName('button');
+    console.log('Total de botones en la página:', botones.length);
+  }
+  contarBotones();
+  
+  
+  
+  /**
+   * Acceder a un elemento usando el selector universar
+   */
+  const getElementsByQuerySelector = () =>{
+                    // document.getElementById("descripcion-operadores");
+      const element = document.querySelector("#descripcion-operadores");
+      console.log(element);
+  
+      const elementParagraph = document.querySelector("p"); // Seleccionar el primer paragraph que se encuentre    
+      console.log( elementParagraph );
+  
+      const classTextCenter = document.querySelector(".text-center"); // Seleccionar el primer elemento con la clase text-center
+      console.log( classTextCenter );
+  
+      const anchorAndTextWarning = document.querySelector("a.text-warning"); // primer anchor que tenga la clases text-warning
+      console.log( anchorAndTextWarning)
+  }
+  
+  getElementsByQuerySelector();
+  
+  /**
+   * Acceder a varios elementos usando el selector universal
+   * 
+   */
+  const getListItemsByQuerySelector = () =>{
+      const listItems = document.querySelectorAll(".text-start li");
+      console.log( listItems );
+  }
+  
+  getListItemsByQuerySelector();
+  
+  
+  // ----------------------- Ejercicio ----------------------------------
+  // Seleccionar la imagen de dinosaurio que se muestra.
+  // mostrar en consola el objeto
+  const getImagenDinosaurio = ( ) => {
+  
+  }
+  getImagenDinosaurio( );
+  
+  // Cambiar la imagen de dinosaurio a la imagen web-developer
+  const changeImage = () => {
+  
+  
+  }
+  
+  const imagenPrincipal = getImagenDinosaurio();
+  imagenPrincipal.style.cursor = "pointer";
+  
+  /**
+   *  ¿Qué es addEventListener?
+   *  Es un método que permite escuchar eventos (como click, keydown, submit, etc.) en un elemento 
+   *  del DOM, y ejecutar una función cuando ese evento ocurre.
+   * 
+   *  Usa addEventListener para código más limpio, modular y flexible. 
+   *  Usa onclick solo en scripts simples o casos rápidos.
+   * 
+   *  Diferencias y ventajas vs onclick
+   *  Característica	        addEventListener	                 onclick
+   *  Múltiples handlers	    ✅ Permite varios listeners	        ❌ Solo uno, el último sobrescribe
+   *  Separación lógica	    ✅ Mantiene mejor el orden del JS	❌ Mezcla estructura y lógica
+   *  Soporte de eventos	    ✅ Soporta todos los eventos	        ❌ Solo click
+   *  Compatibilidad	        ✅ Funciona en todos los navegadores	❌ No soportado en IE8 y anteriores
+   *  Remoción de eventos	    ✅ Se puede eliminar fácilmente	    ❌ No se puede eliminar
+   *  Compatibilidad con IE   ✅ Funciona en IE9+	                ❌ Solo en IE8 y anteriores
+   *  
+   * 
+   */
+  // imagenPrincipal.addEventListener( evento , callback );
+  // imagenPrincipal.addEventListener( "click" , changeImage );
+  imagenPrincipal.addEventListener( "click" , ()=>{
+      // Hacer otras cosas
+      changeImage();
+  } );
+  
+  
+  // ------------------ Propiedades de visualización ---------------
+  //                       Desaparecer el elemento
+  // display : none (quitar el elemento del DOM)
+  // visibility: hidden (ocultar el elemento)
+  
+  // refBtnPrimary = document.quearySelector("#btn-primary")
+  refBtnPrimary = document.getElementById("btn-primary");
+  refBtnSecondary = document.getElementById("btn-secondary");
+  refBtnSuccess = document.getElementById("btn-success");
+  
+  refBtnPrimary.addEventListener("click", ()=>{
+      refBtnPrimary.style.display = "none";
+  } );
+  
+  // Aplicar visibility = "hidden" para el btn-secondary
+  refBtnSecondary.addEventListener("click", () => {
+      refBtnSecondary.style.visibility = "hidden";
+  });
+  
+  // Reestablecer la visualizacion de los botones primary y secondary
+  // Usando el evento mouseover : Se activa cuando el puntero del ratón pasa sobre el botón
+  // display: "block"      visibility: "visible"
+  refBtnSuccess.addEventListener ( "mouseover", () => {
+      refBtnPrimary.style.display = "block";
+      refBtnSecondary.style.visibility = "visible"; 
+  } );

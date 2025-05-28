@@ -1,0 +1,30 @@
+{
+  "name": "sesion-js-08-npm",
+  "version": "1.0.0",
+  "description": "Uso de NPM en una aplicación web",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pruebita": "echo \"Soy de la Ch54\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LilianDelgado13/Ch54-JavaScript.git"
+  },
+  "keywords": [
+    "generation",
+    "js08",
+    "javascript",
+    "npm",
+    "ch54"
+  ],
+  "author": "Lilian Delgado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LilianDelgado13/Ch54-JavaScript/issues"
+  },
+  "homepage": "https://github.com/LilianDelgado13/Ch54-JavaScript#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.6"
+  }
+}
