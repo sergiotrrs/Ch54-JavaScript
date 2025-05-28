@@ -79,12 +79,16 @@ test("Debe rechar un nombre con solo espacios", ()=>{
 }); 
 
 /*
+ test.each o it.each
+ Validar una función con muchos casos de entrada sin repetir código.
+ 
  toHaveProperty(keyPath, value?)
  Propósito: Verifica si un objeto tiene una propiedad específica. 
  Opcionalmente, puedes especificar el valor que esperas en esa propiedad.
 */
-test("Debe rechazar nombres demasiado cortos", ()=>{
-  const response = validateName("Je");
+const cases = ["je", "Je", "f", "F"]
+test.each( cases )("Debe rechazar nombres demasiado cortos", ( name )=>{
+  const response = validateName(name);
   expect( response ).toHaveProperty("errors"); //La respuesta es un objeto y tiene la propiedad errors
   expect( response ).toHaveProperty("isValid", false); //La respuesta es un objeto y tiene la propiedad isValid en false
   expect( response.isValid ).toBeFalsy();
@@ -93,8 +97,9 @@ test("Debe rechazar nombres demasiado cortos", ()=>{
 
 });
 
-test("Debe rechazar valores que no son string(null)", ()=>{
-  const response = validateName( null );
+const noStringCases =[null, 123, undefined];
+test.each( noStringCases)("Debe rechazar valores que no son string(null, 123, undefined)", ( value)=>{
+  const response = validateName( value );
   expect( response.isValid ).toBeFalsy();
   expect( response.errors.length ).toBeGreaterThan(0);
   expect( response.errors ).toContain("El valor ingresado no es un nombre válido");
