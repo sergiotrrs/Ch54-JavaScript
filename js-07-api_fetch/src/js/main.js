@@ -54,11 +54,13 @@ Características clave de los módulos JS:
   Se utiliza para hacer que funciones, variables, clases, etc., de un módulo sean accesibles 
   desde otros módulos.
 
-  export const PI = 3.14159;
+  export const PI = 3.14159;  se puede exportar variables para usar en otro archivo
 
   export function sumar(a, b) {
     return a + b;
   }
+
+  export {PI, sumar};  Exportación nombrada
 
   También puedes exportar por defecto (solo uno por módulo):
   export default function saludar(nombre) {
@@ -78,9 +80,10 @@ Características clave de los módulos JS:
 
 
 // importa las funciones del footer y header e invócalos para que se ejecuten
-
-
-
+import { insertMainHeader } from "../modules/header/header.js";
+import { footer, insertMainFooter } from "../modules/footer//footer.js";
+insertMainHeader(document.getElementById("header"));
+insertMainFooter(document.getElementById("footer"))
 /*
   Uso del local Storage.
 
@@ -99,8 +102,44 @@ Características clave de los módulos JS:
     localStorage.clear() → Borra todo el almacenamiento.
 
 */
+/*
+ Crear en el HTML un input y un botón para guardar el valor en el localStorage.
+  
+  Al cargar la página, si hay un valor guardado, mostrarlo en el titulo H1 "Hola, {nombre}".
+  En caso contrario, mostrar "Hola, persona invitada".
+*/
+const leerNombreDelLocalStorage = () => {
+  const nombre = localStorage.getItem("nombre") || "persona invitada";
+  return nombre;
+}
+const insertarNombreEnElDOM = () => {
+  const refH1 = document.querySelector("#bienvenida");
+  const nombre = leerNombreDelLocalStorage();
+  // refH1.innerHTML = `Hola, ${nombre}`;
+  refH1.textContent = `Hola, ${nombre}`;
+}
+insertarNombreEnElDOM();
+
+const manejoDelBotonGuardar = () => {
+  const refInput = document.querySelector("#nombreInput");
+  const newName = refInput.value; 
+   newName && localStorage.setItem("nombre", newName);
+
+}
 
 
+// NO lo debemos hacer
+//window.aLlamadaBotonGuardar = manejoDelBotonGuardar;
+
+
+/**
+ *  ¿Qué es addEventListener?
+ *  Es un método que permite escuchar eventos (como click, keydown, submit, etc.) en un elemento 
+ *  del DOM, y ejecutar una función cuando ese evento ocurre.
+ * 
+ * */
+const refSaveButton = document.getElementById("btnGuardar");
+refSaveButton.addEventListener( "click", manejoDelBotonGuardar  );
 
 
 /*
@@ -127,11 +166,11 @@ const tercerPaso = () => {
   console.log("03 - Fin de mi programa");
 };
 
-/*
-primerPaso();
-segundoPaso(); // Este proceso demora tiempo
-tercerPaso();
-*/
+
+//primerPaso();
+//segundoPaso(); // Este proceso demora tiempo
+//tercerPaso();
+
 
 /*
  Programación asíncrona.
@@ -151,8 +190,29 @@ tercerPaso();
      setTimeout( fncCallback, tiempo_ms, argumentos_fnc );
      setTimeout( ()=>{}  , tiempo_ms );
 
+
+Es importante entender los procesos de ejecución
 */
 
+const saludarTrascurridosXseg = (milisegundos) => {
+  const saludar = (nombre) => alert(`Hola ${nombre}`);
+
+  setTimeout( saludar, milisegundos, "Neo" ); // se oordena asi para que desppues de 5 segundos me apararezca el nombre 
+
+}
+console.log("Antes de saludar")
+saludarTrascurridosXseg(5000);
+console.log("Despues de saldar")
 
 
+// si quiero que me aparezcan más nombres solo pongo más parametros y le paso más argumentos
 
+const saludarTrascurridosXseg = (milisegundos) => {
+  const saludar = (nombre, cohorte) => alert(`Hola ${nombre} de la ${cohorte}`);
+
+  setTimeout( saludar, milisegundos, "Neo", "Ch54" ); // se oordena asi para que desppues de 5 segundos me apararezca el nombre 
+
+}
+console.log("Antes de saludar")
+saludarTrascurridosXseg(5000);
+console.log("Despues de saldar")

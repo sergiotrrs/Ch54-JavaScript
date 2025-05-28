@@ -1,5 +1,3 @@
-
-
 const insertMainHeader = ( header )=>{
     
      header.innerHTML = `
@@ -30,4 +28,9 @@ const insertMainHeader = ( header )=>{
      `;
 
 }
+
+const myVar = "Ch54";
+
+export { insertMainHeader, myVar };
+
 
