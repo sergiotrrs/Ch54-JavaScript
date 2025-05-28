@@ -16,7 +16,7 @@ const myObj = {
     firstName : "Trrs",
     email : "lilianeo@matrix.com",
     password : "despertar&",
-    birthdate : "1996-01-13"
+    birthdate : "1996-01-13",
     isActive : true,
     hobbies :["Despertar el tercer ojo, tomar pastilla roja, comer pure"],
     favoritos :{
