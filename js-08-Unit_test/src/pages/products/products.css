@@ -1,0 +1,13 @@
+
+.product-img {
+    object-fit: scale-down; /* Asegura que la imagen cubra el área sin distorsionarse */
+    height: 200px; /* Ajusta la altura según sea necesario */
+}
+
+.card-title-container {
+    height: 3.5rem;
+}
+
+.card-description-container{
+    height: 4rem;
+}
