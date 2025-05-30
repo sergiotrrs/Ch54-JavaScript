@@ -1,11 +1,16 @@
-const Navbar = () => {
-    return(
-    <ol> 
-    <li> Snape </li>
-    <li> Lili </li>
-    <li> Patronus </li>
-    <li> Albus </li> 
-    </ol>
+const Navbar = ({title}) => {
+    return (
+        <header>
+            <nav>
+                <h1>{title}</h1>
+                <ul>
+                    <li>Inicio</li>
+                    <li>About Us</li>
+                    <li>Contact</li>
+                    <li>Registrer</li>
+                </ul>
+            </nav>
+        </header>
     );
-};
-export { Navbar};
+}
+export { Navbar };
