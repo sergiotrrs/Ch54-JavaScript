@@ -7,8 +7,9 @@ function App() {
   const myJsx = (
     <>
       <Navbar />
-      <Home />
-      <Footer />
+      <Home name="Myrtle la llorona" hogwartsHome="Ravenclaw" />
+      <Home name="Sercherus Snape" hogwartsHome="Slytherin" />
+      <Footer cohorte={54} />
     </>
   );
 
